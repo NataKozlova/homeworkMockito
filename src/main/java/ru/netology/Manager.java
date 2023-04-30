@@ -6,12 +6,12 @@ public class Manager {
     private int limit = 5;
 
 
-    public Manager() {
-        repository = new String[10];
+    public Manager(int countRepository) {
+        repository = new String[countRepository];
     }
 
-    public Manager(int limit) {
-        repository = new String[10];
+    public Manager(int countRepository, int limit) {
+        repository = new String[countRepository];
         this.limit = limit;
     }
 
