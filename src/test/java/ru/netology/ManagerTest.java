@@ -7,7 +7,7 @@ public class ManagerTest {
 
     @Test
     void testAddMovie() {
-        Manager manager = new Manager(1);
+        Manager manager = new Manager();
         manager.add("Бладшот");
 
         Assertions.assertEquals(manager.findAll().length, 1);
@@ -16,18 +16,24 @@ public class ManagerTest {
 
     @Test
     void testFindAll() {
-        Manager manager = new Manager(2);
+        Manager manager = new Manager();
         manager.add("Бладшот");
         manager.add("Вперед");
+        manager.add("Отель Белград");
+        manager.add("Джентльмены");
+        manager.add("Человек-нивидимка");
 
-        Assertions.assertEquals(manager.findAll().length, 2);
+        Assertions.assertEquals(manager.findAll().length, 5);
         Assertions.assertEquals("Бладшот", manager.findAll()[0]);
         Assertions.assertEquals("Вперед", manager.findAll()[1]);
+        Assertions.assertEquals("Отель Белград", manager.findAll()[2]);
+        Assertions.assertEquals("Джентльмены", manager.findAll()[3]);
+        Assertions.assertEquals("Человек-нивидимка", manager.findAll()[4]);
     }
 
     @Test
     void testFindLast() {
-        Manager manager = new Manager(5);
+        Manager manager = new Manager();
         manager.add("Бладшот");
         manager.add("Вперед");
         manager.add("Отель Белград");
@@ -44,7 +50,7 @@ public class ManagerTest {
 
     @Test
     void testFindLastByLimit() {
-        Manager manager = new Manager(5, 2);
+        Manager manager = new Manager(2);
         manager.add("Бладшот");
         manager.add("Вперед");
         manager.add("Отель Белград");
