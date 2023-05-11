@@ -38,7 +38,8 @@ public class Manager {
     }
 
     public String[] findLast() {
-        String[] subArray = new String[limit];
+        int countElementsArray = size > limit ? limit : size;
+        String[] subArray = new String[countElementsArray];
         int j = 0;
         for (int i = size - 1; i >= 0; i--) {
             if (j < limit) {
@@ -48,5 +49,6 @@ public class Manager {
         }
         return subArray;
     }
+
 }
 
